@@ -31,6 +31,7 @@ namespace ProductImageApi.Services.Implement
                 Image = imagePath,
             };
             await _productRepo.Create(productEntity);
+            await _productRepo.Save();
         }
 
         public async Task Delete(int id)
@@ -82,6 +83,7 @@ namespace ProductImageApi.Services.Implement
             product.Price = productUpdateDTO.Price;
 
             await _productRepo.Update(product);
+            await _productRepo.Save();
         }
     }
 }

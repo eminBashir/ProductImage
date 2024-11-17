@@ -13,8 +13,6 @@ namespace ProductImageApi.Repository.Implement
         public async Task Create(Product product)
         {
             _context.Products.Add(product);
-            await Save();
-
         }
 
         public async Task Delete(Product product)
@@ -41,7 +39,7 @@ namespace ProductImageApi.Repository.Implement
         public async Task Update(Product product)
         {
            _context.Update(product);
-            await Save();
+            
         }
     }
 }
